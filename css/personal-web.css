@@ -10,22 +10,70 @@ body {
   overflow-x: hidden;
 }
 
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/******************************************/
+aside {
+  background: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 5em;
+  padding: 3em 3em 0 1em;
+  z-index: 3;
+}
+aside .close {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  cursor: pointer;
+}
+aside .close:hover {
+  transform: scale(1.1);
+}
+aside .aside-main {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+aside .aside-main .aside-top, aside .aside-main .aside-below {
+  padding: 0;
+  margin: 0;
+}
+aside .aside-main .aside-top li, aside .aside-main .aside-below li {
+  padding: 0;
+  margin-bottom: 1.6em;
+}
+aside .aside-main .aside-top li a, aside .aside-main .aside-below li a {
+  color: var(--bg);
+}
+
+/****************************************/
 .header {
   position: fixed;
   background: var(--bg);
   top: 0;
   right: 0;
   left: 0;
-  z-index: 999;
+  z-index: 2;
 }
 .header .header-content {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0 15px;
 }
-.header .header-content .header-front {
-  display: flex;
-  align-items: center;
+.header .header-content .header-front .menu {
+  display: none;
 }
 .header .header-content .header-front label {
   display: flex;
@@ -301,16 +349,28 @@ body {
   transform: scale(1.2);
 }
 
+/***********************************************/
+.footer {
+  background: gray;
+  margin: 0;
+  padding: 3em;
+}
 .footer ul {
   padding: 0;
+  margin: 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 .footer ul li {
   list-style-type: none;
 }
-.footer ul li img {
-  width: 50px;
+.footer ul li a:hover img {
+  -webkit-animation: social-media 0.5s infinite alternate;
+          animation: social-media 0.5s infinite alternate;
+}
+.footer ul li a img {
+  width: 30px;
+  cursor: pointer;
 }
 
 @-webkit-keyframes scroll-down {
@@ -332,5 +392,74 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@-webkit-keyframes social-media {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+@keyframes social-media {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+@media only screen and (max-width: 1300px) {
+  .hero-intro .left .card {
+    width: 150px;
+    transition: 0.3s;
+  }
+  .hero-intro .left .card:hover {
+    transform: scale(1.2);
+  }
+  .hero-intro .mid .card {
+    width: 150px;
+    transition: 0.3s;
+  }
+  .hero-intro .mid .card:hover {
+    transform: scale(1.2);
+  }
+  .hero-intro .right .card {
+    width: 150px;
+    transition: 0.3s;
+  }
+  .hero-intro .right .card:hover {
+    transform: scale(1.2);
+  }
+
+  .footer {
+    padding: 1.2em;
+  }
+}
+@media screen and (max-width: 940px) {
+  .header {
+    padding: 0.7em;
+    background: wheat;
+  }
+  .header .header-content {
+    display: unset;
+    margin: 0;
+    padding: 0;
+  }
+  .header .header-content .header-front {
+    display: flex;
+    justify-content: space-between;
+  }
+  .header .header-content .header-front .menu {
+    display: block;
+    width: 40px;
+    cursor: pointer;
+  }
+  .header .header-content .header-mid {
+    display: none;
+  }
+  .header .header-content .header-end {
+    display: none;
   }
 }/*# sourceMappingURL=personal-web.css.map */
