@@ -8,8 +8,6 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  display: flex;
-  justify-content: center;
 }
 
 li {
@@ -38,8 +36,8 @@ aside {
 }
 aside .close {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 18px;
+  left: 18px;
   width: 30px;
   cursor: pointer;
 }
@@ -51,7 +49,7 @@ aside .aside-top, aside .aside-below {
   margin: 0;
 }
 aside .aside-top li, aside .aside-below li {
-  padding: 1em 8em 1em 1em;
+  padding: 1.5em 8em 1em 1.4em;
   margin-bottom: 1em;
   position: relative;
   transition: 0.3s;
@@ -67,6 +65,7 @@ aside .aside-top li::before, aside .aside-below li::before {
   width: 5px;
   height: 55px;
   background: yellowgreen;
+  visibility: hidden;
 }
 aside .aside-top li a, aside .aside-below li a {
   color: var(--bg);
@@ -319,7 +318,6 @@ aside .aside-top li a p, aside .aside-below li a p {
 .hero-feature-games {
   background: url(../images/gaming2-bg.jpg);
   background-size: cover;
-  background-repeat: no-repeat;
   box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -327,7 +325,7 @@ aside .aside-top li a p, aside .aside-below li a p {
 }
 .hero-feature-games .feature-games-left {
   grid-area: info;
-  padding: 15em 10em 15em 20em;
+  margin: 15em 5em;
   color: white;
 }
 .hero-feature-games .feature-games-left h2 {
@@ -359,74 +357,10 @@ aside .aside-top li a p, aside .aside-below li a p {
 }
 
 /********************************************************/
-.hero-intro {
-  background: var(--bg);
-  margin: 0;
-  height: 500px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas: "left mid right";
-}
-.hero-intro .left {
-  grid-area: left;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.hero-intro .left .card {
-  background: gray;
-  color: white;
-  width: 300px;
-  padding: 3em;
-  border-radius: 3em;
-  box-shadow: 10px 10px 10px black;
-  transition: 0.3s;
-}
-.hero-intro .left .card:hover {
-  transform: scale(1.2);
-}
-.hero-intro .mid {
-  grid-area: mid;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.hero-intro .mid .card {
-  background: gray;
-  color: white;
-  width: 300px;
-  padding: 3em;
-  border-radius: 3em;
-  box-shadow: 10px 10px 10px black;
-  transition: 0.3s;
-}
-.hero-intro .mid .card:hover {
-  transform: scale(1.2);
-}
-.hero-intro .right {
-  grid-area: right;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.hero-intro .right .card {
-  background: gray;
-  color: white;
-  width: 300px;
-  padding: 3em;
-  border-radius: 3em;
-  box-shadow: 10px 10px 10px black;
-  transition: 0.3s;
-}
-.hero-intro .right .card:hover {
-  transform: scale(1.2);
-}
-
-/***********************************************/
 .footer {
   background: gray;
   margin: 0;
-  padding: 3em;
+  padding: 1.5em;
 }
 .footer ul {
   padding: 0;
@@ -446,11 +380,13 @@ aside .aside-top li a p, aside .aside-below li a p {
   cursor: pointer;
 }
 
+/**********************************************/
 .aside-move {
   transform: translateX(0);
   opacity: 1;
 }
 
+/***********************************************/
 @-webkit-keyframes scroll-down {
   from {
     opacity: 0;
@@ -461,7 +397,6 @@ aside .aside-top li a p, aside .aside-below li a p {
     transform: translateY(0);
   }
 }
-
 @keyframes scroll-down {
   from {
     opacity: 0;
@@ -488,34 +423,8 @@ aside .aside-top li a p, aside .aside-below li a p {
     transform: translateY(-10px);
   }
 }
-@media only screen and (max-width: 1300px) {
-  .hero-intro .left .card {
-    width: 150px;
-    transition: 0.3s;
-  }
-  .hero-intro .left .card:hover {
-    transform: scale(1.1);
-  }
-  .hero-intro .mid .card {
-    width: 150px;
-    transition: 0.3s;
-  }
-  .hero-intro .mid .card:hover {
-    transform: scale(1.1);
-  }
-  .hero-intro .right .card {
-    width: 150px;
-    transition: 0.3s;
-  }
-  .hero-intro .right .card:hover {
-    transform: scale(1.1);
-  }
-
-  .footer {
-    padding: 1.2em;
-  }
-}
-@media only screen and (max-width: 940px) {
+/******************************************************/
+@media only screen and (max-width: 1200px) {
   .header {
     padding: 0.7em;
     background: var(--bg);
@@ -539,6 +448,20 @@ aside .aside-top li a p, aside .aside-below li a p {
   }
   .header .header-content .header-end {
     display: none;
+  }
+
+  .hero-feature-games {
+    display: flex;
+    justify-content: center;
+  }
+  .hero-feature-games .feature-games-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 650px;
+  }
+  .hero-feature-games .feature-games-left img {
+    width: 80px;
   }
 }
 @media only screen and (max-width: 800px) {
@@ -602,6 +525,25 @@ aside .aside-top li a p, aside .aside-below li a p {
     display: block;
     margin-top: 0.6em;
     margin-left: 0;
+  }
+
+  .hero-feature-games {
+    display: flex;
+    justify-content: center;
+  }
+  .hero-feature-games .feature-games-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-feature-games .feature-games-left h2 {
+    font-size: 45px;
+  }
+  .hero-feature-games .feature-games-left p {
+    font-size: 15px;
+  }
+  .hero-feature-games .feature-games-left img {
+    width: 60px;
   }
 
   .footer ul {

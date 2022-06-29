@@ -2,17 +2,17 @@
 .login {
   position: fixed;
   top: 8em;
+  left: 35%;
+  right: 35%;
   font-family: "Quicksand", sans-serif;
   background: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 500px;
   padding: 8em 5em;
   border-radius: 0.5em;
   transform: translateY(-120%);
   transition: 0.35s;
-  opacity: 0;
   z-index: 3;
 }
 .login .login-content img {
@@ -82,4 +82,17 @@
 .login-move {
   transform: translateY(0);
   opacity: 1;
+}
+
+@media only screen and (max-width: 1200px) {
+  .login {
+    left: 20%;
+    right: 20%;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .login {
+    left: 10%;
+    right: 10%;
+  }
 }/*# sourceMappingURL=login.css.map */

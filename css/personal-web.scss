@@ -7,8 +7,6 @@ body {
     margin: 0;
     padding: 0; 
     overflow-x: hidden;
-    display: flex;
-    justify-content: center;
 }
 
 li {
@@ -38,8 +36,8 @@ aside {
     
     .close {
         position: absolute;
-        top: 10px;
-        left: 10px;
+        top: 18px;
+        left: 18px;
         width: 30px;
         cursor: pointer;
         &:hover {
@@ -51,7 +49,7 @@ aside {
         padding: 3em 0 0 0;
         margin: 0;
         li {
-            padding: 1em 8em 1em 1em;
+            padding: 1.5em 8em 1em 1.4em;
             margin-bottom: 1em;  
             position: relative;
             
@@ -68,6 +66,7 @@ aside {
                 width: 5px;
                 height: 55px;
                 background: yellowgreen;
+                visibility: hidden;
             }        
             a {
                 color: var(--bg);                             
@@ -338,15 +337,15 @@ aside {
     .hero-feature-games {
         background: url(../images/gaming2-bg.jpg);
         background-size:cover;
-        background-repeat: no-repeat;
         box-sizing: border-box;  
         display: grid;
         grid-template-columns: repeat(2,1fr);
         grid-template-areas: "info none";
         .feature-games-left {
             grid-area: info;
-            padding: 15em 10em 15em 20em;
-            color: white;        
+            margin: 15em 5em;
+            color: white; 
+                
             h2 {
                 font-size: 60px;
                 position: relative;
@@ -382,73 +381,12 @@ aside {
 
 
 /********************************************************/
-.hero-intro {
-    background: var(--bg);
-    margin: 0;
-    height: 500px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: "left mid right";      
-    .left {
-        grid-area: left;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .card {
-            background: gray;
-            color: white;
-            width: 300px;
-            padding: 3em;
-            border-radius: 3em;
-            box-shadow: 10px 10px 10px black;
-            transition: .3s;
-            &:hover {
-                transform: scale(1.2);
-            }
-        }
-    }
-    .mid {
-        grid-area: mid;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .card {
-            background: gray;
-            color: white;
-            width: 300px;
-            padding: 3em;
-            border-radius: 3em;
-            box-shadow: 10px 10px 10px black;
-            transition: .3s;
-            &:hover {
-                transform: scale(1.2);
-            }
-        }
-    }
-    .right {
-        grid-area: right;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .card {
-            background: gray;
-            color: white;
-            width: 300px;
-            padding: 3em;
-            border-radius: 3em;
-            box-shadow: 10px 10px 10px black;
-            transition: .3s;
-            &:hover {
-                transform: scale(1.2);
-            }
-        }
-    }
-}
-/***********************************************/
+
+
 .footer {
     background: gray;
     margin: 0;
-    padding: 3em;
+    padding: 1.5em;
     ul {
         padding: 0;
         margin: 0;
@@ -469,16 +407,13 @@ aside {
         }
     }
 }
-
+/**********************************************/
 .aside-move {
     transform: translateX(0);
     opacity: 1;
 }
 
-
-
-
-
+/***********************************************/
 
 @keyframes scroll-down {
     from {
@@ -502,43 +437,9 @@ aside {
         
     }
 }
+/******************************************************/
 
-@media only screen and (max-width:1300px) {
-    .hero-intro {   
-        .left {
-            .card {               
-                width: 150px;
-                transition: .3s;
-                &:hover {
-                    transform: scale(1.1);
-                }
-            }
-        }
-        .mid {
-            .card {             
-                width: 150px;
-                transition: .3s;
-                &:hover {
-                    transform: scale(1.1);
-                }
-            }
-        }
-        .right {
-            .card {            
-                width: 150px;
-                transition: .3s;
-                &:hover {
-                    transform: scale(1.1);
-                }
-            }
-        }
-    }
-    .footer {
-        padding: 1.2em;
-    }
-}
-
-@media only screen and (max-width: 940px){
+@media only screen and (max-width: 1200px){
     .header {
         padding: .7em;
         background: var(--bg);
@@ -561,6 +462,20 @@ aside {
             }
             .header-end {
                 display: none;
+            }
+        }
+    }
+
+    .hero-feature-games {
+        display:flex;
+        justify-content: center;
+        .feature-games-left {
+            display: flex;
+            flex-direction: column;            
+            align-items: center;
+            width: 650px;
+            img {
+                width: 80px;
             }
         }
     }
@@ -635,6 +550,26 @@ aside {
             }
         }       
     } 
+
+    .hero-feature-games {
+        display:flex;
+        justify-content: center;
+        .feature-games-left {
+            display: flex;
+            flex-direction: column;            
+            align-items: center;
+            h2 {
+                font-size: 45px;
+            }
+            p {
+                font-size: 15px;
+            }
+            img {
+                width: 60px;
+            }
+        }
+    }
+
     .footer {
         ul {
             display: grid;
@@ -648,3 +583,6 @@ aside {
         }
     }
 }
+
+
+    
