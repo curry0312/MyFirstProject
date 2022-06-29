@@ -5,22 +5,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/personal-web.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="../css/login.css">
+
+    <title>Wang-Website</title>
 </head>
 <body>
 <!----------------------------------------------------------------------------->
-    <aside>
-            <img src="../images/close-outline.svg" class="close" alt="">
-            <ul class="aside-main">
+    <div class="login" id="login_page">
+        <div class="login-content">
+            <img src="../images-aside/close-outline.svg" alt="cross" id="login_cross">
+            <h3>Members Login</h3>
+            <form action="">
+                <label for="login-email">Email Address</label>
+                <input type="email" name="email" id="login-email">
+                <label for="login-password">Password</label>
+                <input type="password" name="password" id="login-password">
+                <a href="#">Forgot your password?</a>
+                <a href="#">create an account</a>
+                <button id="login-button">Log in now</button>
+            </form>
+        </div>
+    </div>
+<!----------------------------------------------------------------------------->
+    <aside id="aside">
+            <img src="../images-aside/close-outline.svg" class="close" id="close" alt="">
                 <ul class="aside-top">
-                    <li><a href="#">NEWS</a></li>
-                    <li><a href="#">遊戲</a></li>                 
-                    <li><a href="#">電腦配備</a></li>                 
-                    <li><a href="#">設定</a></li> 
+                    <li>
+                        <a href="#">
+                            <img src="../images-aside/newspaper-outline.svg" alt="">
+                            <p>NEWS</p>
+                            
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../images-aside/game-controller-outline.svg" alt="">
+                            <p>遊戲</p>
+                        </a>
+                    </li>                 
+                    <li>
+                        <a href="#">
+                            <img src="../images-aside/computer.png" alt="">
+                            <p>電腦配備</p>
+                        </a>
+                    </li>                 
+                    <li>
+                        <a href="#">
+                            <img src="../images-aside/settings-outline.svg" alt="">
+                            <p>設定</p>
+                        </a>
+                    </li> 
                 </ul>  
                 <ul class="aside-below">
-                    <li><a href="#">登入</a></li>
-                    <li><a href="#">註冊</a></li>
+                    <li>
+                        <a href="#">
+                            <img src="../images-aside/log-in-outline.svg" alt="">
+                            <p>登入</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../images-aside/person-circle-outline.svg" alt="">
+                            <p>註冊</p>
+                        </a>
+                    </li>
                 </ul>
             </ul>
         
@@ -31,7 +79,7 @@
             <div class="header-content">
 
                 <div class="header-front">     
-                    <img src="../images/menu-outline.svg" class="menu" id="menu" alt="">             
+                    <img src="../images/menu.png" class="menu" id="menu" alt="">             
                     <label for="search">                       
                         <img src="../images/search.svg" alt="search">                       
                         <input type="text" id="search"name="search" placeholder="搜尋" >
@@ -49,7 +97,7 @@
 
                 <div class="header-end">
                     <ul>
-                        <li><a href="#">登入</a></li>
+                        <li><a href="#" id="login_header">登入</a></li>
                         <li><a href="#" class="signup">註冊</a></li>
                     </ul>
                 </div>
@@ -74,6 +122,20 @@
                 </div>       
             </div>
 
+        </div>
+<!-------------------------------------------------------------->
+        <div class="hero-feature-games">
+            <div class="feature-games-left">
+                <img src="../images/feature-games.png" alt="">
+                <h2>知名遊戲介紹</h2>
+                <p>將羅技 G 系列耳機的清晰傳真能力與 Immerse 搭配使用，可以大幅增強身臨其境之感受，由 Embody 提供的 AI 引擎可以根據您的獨特耳朵形狀自訂音訊。Immerse 利用雲端運算和人工智慧的功能，為您的耳朵提供打造出獨特的真實沉浸感受聲音體驗。透過捕捉您耳朵影像的直覺過程，Immerse 在一分鐘之內就能建立屬於您的個性化空間音訊設定檔，傳遞給您的耳朵所想聽到的聲音。
+                </p>
+                <a href="#">
+                    <span>
+                        快速前往
+                    </span>
+                </a>
+            </div>
         </div>
 <!----------------------------------------------------------------------------------------->
         <div class="hero-intro">
@@ -114,4 +176,31 @@
         </div>
     </div>
 </body>
+<script>
+    const menu = document.getElementById('menu')
+    const close = document.getElementById('close')
+    const aside = document.getElementById('aside')
+    const login_header = document.getElementById('login_header')
+    const login_page = document.getElementById('login_page')
+    const login_cross = document.getElementById('login_cross')
+
+    menu.addEventListener('click',()=>{
+        aside.classList.add('aside-move')
+    })
+
+    close.addEventListener('click',()=>{
+        aside.classList.remove('aside-move')
+    })
+
+    login_header.addEventListener('click',()=>{
+        login_page.classList.add('login-move')
+
+    })
+
+    login_cross.addEventListener('click',()=>{
+        login_page.classList.remove('login-move')
+    })
+    
+    
+</script>
 </html>

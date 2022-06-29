@@ -7,8 +7,9 @@ body {
     margin: 0;
     padding: 0; 
     overflow-x: hidden;
-} 
-
+    display: flex;
+    justify-content: center;
+}
 
 li {
     list-style-type: none;
@@ -17,45 +18,74 @@ li {
 a {
     text-decoration: none;
 }
+/******************************************/
+
 
 /******************************************/
 aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background: white;
     position: fixed;
     left: 0;
     top: 0;
-    bottom: 5em;
-    padding: 3em 3em 0 1em;
+    bottom: 0;
+    transform: translateX(-100%);
+    transition: .5s;
+    opacity: 0;
     z-index: 3;
+    
     .close {
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 10px;
+        left: 10px;
         width: 30px;
         cursor: pointer;
         &:hover {
             transform: scale(1.1);
         }
     }
-    .aside-main{
-        padding: 0;
+
+    .aside-top,.aside-below{
+        padding: 3em 0 0 0;
         margin: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        .aside-top,.aside-below{
-            padding: 0;
-            margin: 0;
-            li {
-                padding: 0;
-                margin-bottom: 1.6em;
-                a {
-                    color: var(--bg)
-                }
+        li {
+            padding: 1em 8em 1em 1em;
+            margin-bottom: 1em;  
+            position: relative;
+            
+            transition: .3s;
+            &:hover {
+                transform: translateX(10%);
+                
             }
-        }   
-    }  
-}
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 5px;
+                height: 55px;
+                background: yellowgreen;
+            }        
+            a {
+                color: var(--bg);                             
+                img {
+                    width: 25px;
+                }
+            
+                p {
+                    display: inline-block;
+                    vertical-align:6px;
+                    margin: 0 0 0 10px;
+                }
+                
+            }
+        }
+    }   
+}  
+
 
 /****************************************/
 
@@ -75,6 +105,12 @@ aside {
         .header-front {
             .menu{
                 display: none;
+                width: 30px;
+                height: 20px;
+                cursor: pointer;
+                &:hover {
+                    transform: scale(1.1);
+                }
             }
             label{
                 display: flex;  
@@ -249,15 +285,15 @@ aside {
         padding-top: 10em;
         margin-left: 2em;       
         .opening {
-            color: white;
-            font-size: 20px;
+            color: white;         
             margin-bottom: 1.5em;
-            animation: scroll-down .4s linear forwards;
+            animation: scroll-down .8s  forwards ease-in-out;
             h1 {          
                 font-size: 80px;   
                 margin: 0;                    
             }
             p {
+                font-size: 20px;
                 width: 500px;
                 margin: 0;
             }
@@ -265,7 +301,7 @@ aside {
         .inputgmail {
             margin-right: 1.8em;
             opacity: 0;
-            animation: scroll-down .4s linear .5s forwards;
+            animation: scroll-down .6s linear .8s forwards;
             label {
                 display: block;
                 color: greenyellow;
@@ -298,7 +334,54 @@ aside {
         }
     }  
 }
+/********************************************************/
+    .hero-feature-games {
+        background: url(../images/gaming2-bg.jpg);
+        background-size:cover;
+        background-repeat: no-repeat;
+        box-sizing: border-box;  
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-areas: "info none";
+        .feature-games-left {
+            grid-area: info;
+            padding: 15em 10em 15em 20em;
+            color: white;        
+            h2 {
+                font-size: 60px;
+                position: relative;
+                margin: 0;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 100px;
+                    height: 7px;
+                    bottom: -12px;
+                    left: 0;
+                    background: white;
+                }
+            }
+            p {
+                color: white;
+                margin: 1.5em 0;
+            }
+            a {
+                span {
+                    color: black;
+                    background: lightblue;
+                    padding: .8em 1.5em;
+                    border-radius: .5em;
+                    &:hover {
+                        background: rgb(193, 220, 229);
+                    }
+                }
+            }
+        }
+    }
 
+
+
+/********************************************************/
 .hero-intro {
     background: var(--bg);
     margin: 0;
@@ -387,10 +470,20 @@ aside {
     }
 }
 
+.aside-move {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+
+
+
+
+
 @keyframes scroll-down {
     from {
         opacity: 0;
-        transform: translateY(-200px);
+        transform: translateY(-80px);
     }
     to {
         opacity: 1;
@@ -417,7 +510,7 @@ aside {
                 width: 150px;
                 transition: .3s;
                 &:hover {
-                    transform: scale(1.2);
+                    transform: scale(1.1);
                 }
             }
         }
@@ -426,7 +519,7 @@ aside {
                 width: 150px;
                 transition: .3s;
                 &:hover {
-                    transform: scale(1.2);
+                    transform: scale(1.1);
                 }
             }
         }
@@ -435,7 +528,7 @@ aside {
                 width: 150px;
                 transition: .3s;
                 &:hover {
-                    transform: scale(1.2);
+                    transform: scale(1.1);
                 }
             }
         }
@@ -445,10 +538,10 @@ aside {
     }
 }
 
-@media screen and (max-width: 940px){
+@media only screen and (max-width: 940px){
     .header {
         padding: .7em;
-        background: wheat;
+        background: var(--bg);
         .header-content {
             display: unset;
             margin: 0;
@@ -456,10 +549,11 @@ aside {
             .header-front {
                 display: flex;
                 justify-content: space-between;
+                align-items: center;
                 .menu {
                     display: block;
-                    width: 40px;
-                    cursor: pointer;
+                    margin: .7em;
+                    
                 }
             }
             .header-mid {
@@ -467,6 +561,89 @@ aside {
             }
             .header-end {
                 display: none;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:800px){
+    .hero-intro {
+        display: flex;
+        flex-direction: column;
+        height: 25%;
+        .left {
+            padding: 2em;
+            .card {               
+                width: 300px;
+                transition: .3s;
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+        .mid {
+            padding: 2em;
+            .card {             
+                width: 300px;
+                transition: .3s;
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+        .right {
+            padding: 2em;
+            .card {            
+                width: 300px;
+                transition: .3s;
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }       
+    }
+}
+
+@media only screen and (max-width:700px){
+    .hero {
+        .hero-content {
+            margin-left: 6em;
+            .opening {
+                h1 {
+                    font-size: 50px;
+                }
+                p {
+                    font-size: 15px;
+                    margin-left: .2em;
+                }
+            }
+            .inputgmail {
+                form {
+                    margin-left: -6em;
+                }
+                label {
+                    font-size: 15px;
+                }
+                input {
+                    width: 350px;
+                }
+                button {
+                    display: block;
+                    margin-top: .6em;
+                    margin-left: 0;
+                }
+            }
+        }       
+    } 
+    .footer {
+        ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr;         
+            li {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 1.2em;
             }
         }
     }

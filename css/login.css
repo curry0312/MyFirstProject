@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap");
+.login {
+  position: fixed;
+  top: 8em;
+  font-family: "Quicksand", sans-serif;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  padding: 8em 5em;
+  border-radius: 0.5em;
+  transform: translateY(-120%);
+  transition: 0.35s;
+  opacity: 0;
+  z-index: 3;
+}
+.login .login-content img {
+  width: 40px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+.login .login-content img:hover {
+  background: gainsboro;
+  border-radius: 50%;
+}
+.login .login-content h3 {
+  margin: 0 0 1.7em 0;
+  font-size: 1.5em;
+}
+.login .login-content form {
+  display: flex;
+  flex-direction: column;
+}
+.login .login-content form label {
+  margin-bottom: 0.3em;
+}
+.login .login-content form input {
+  margin-bottom: 1.5em;
+  padding: 0.5em;
+  width: 250px;
+  height: 30px;
+  background: ghostwhite;
+  border: none;
+  border-radius: 0.3em;
+  font-size: 1.05em;
+}
+.login .login-content form input:hover {
+  background: gainsboro;
+}
+.login .login-content form input:focus {
+  outline: black;
+  outline-width: 50px;
+}
+.login .login-content form a {
+  margin-bottom: 1.3em;
+  color: gray;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.login .login-content form a:hover {
+  color: black;
+}
+.login .login-content form button {
+  width: 120px;
+  color: rgb(110, 110, 110);
+  font-size: 0.9em;
+  font-family: "Quicksand", sans-serif;
+  background: yellowgreen;
+  border: none;
+  padding: 0.8em;
+  margin-top: 1.7em;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+.login .login-content form button:hover {
+  font-weight: bold;
+}
+
+.login-move {
+  transform: translateY(0);
+  opacity: 1;
+}/*# sourceMappingURL=login.css.map */

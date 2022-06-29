@@ -8,6 +8,8 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  display: flex;
+  justify-content: center;
 }
 
 li {
@@ -19,42 +21,63 @@ a {
 }
 
 /******************************************/
+/******************************************/
 aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: white;
   position: fixed;
   left: 0;
   top: 0;
-  bottom: 5em;
-  padding: 3em 3em 0 1em;
+  bottom: 0;
+  transform: translateX(-100%);
+  transition: 0.5s;
+  opacity: 0;
   z-index: 3;
 }
 aside .close {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 10px;
+  left: 10px;
   width: 30px;
   cursor: pointer;
 }
 aside .close:hover {
   transform: scale(1.1);
 }
-aside .aside-main {
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-aside .aside-main .aside-top, aside .aside-main .aside-below {
-  padding: 0;
+aside .aside-top, aside .aside-below {
+  padding: 3em 0 0 0;
   margin: 0;
 }
-aside .aside-main .aside-top li, aside .aside-main .aside-below li {
-  padding: 0;
-  margin-bottom: 1.6em;
+aside .aside-top li, aside .aside-below li {
+  padding: 1em 8em 1em 1em;
+  margin-bottom: 1em;
+  position: relative;
+  transition: 0.3s;
 }
-aside .aside-main .aside-top li a, aside .aside-main .aside-below li a {
+aside .aside-top li:hover, aside .aside-below li:hover {
+  transform: translateX(10%);
+}
+aside .aside-top li::before, aside .aside-below li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;
+  height: 55px;
+  background: yellowgreen;
+}
+aside .aside-top li a, aside .aside-below li a {
   color: var(--bg);
+}
+aside .aside-top li a img, aside .aside-below li a img {
+  width: 25px;
+}
+aside .aside-top li a p, aside .aside-below li a p {
+  display: inline-block;
+  vertical-align: 6px;
+  margin: 0 0 0 10px;
 }
 
 /****************************************/
@@ -74,6 +97,12 @@ aside .aside-main .aside-top li a, aside .aside-main .aside-below li a {
 }
 .header .header-content .header-front .menu {
   display: none;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+.header .header-content .header-front .menu:hover {
+  transform: scale(1.1);
 }
 .header .header-content .header-front label {
   display: flex;
@@ -237,24 +266,24 @@ aside .aside-main .aside-top li a, aside .aside-main .aside-below li a {
 }
 .hero .hero-content .opening {
   color: white;
-  font-size: 20px;
   margin-bottom: 1.5em;
-  -webkit-animation: scroll-down 0.4s linear forwards;
-          animation: scroll-down 0.4s linear forwards;
+  -webkit-animation: scroll-down 0.8s forwards ease-in-out;
+          animation: scroll-down 0.8s forwards ease-in-out;
 }
 .hero .hero-content .opening h1 {
   font-size: 80px;
   margin: 0;
 }
 .hero .hero-content .opening p {
+  font-size: 20px;
   width: 500px;
   margin: 0;
 }
 .hero .hero-content .inputgmail {
   margin-right: 1.8em;
   opacity: 0;
-  -webkit-animation: scroll-down 0.4s linear 0.5s forwards;
-          animation: scroll-down 0.4s linear 0.5s forwards;
+  -webkit-animation: scroll-down 0.6s linear 0.8s forwards;
+          animation: scroll-down 0.6s linear 0.8s forwards;
 }
 .hero .hero-content .inputgmail label {
   display: block;
@@ -286,6 +315,50 @@ aside .aside-main .aside-top li a, aside .aside-main .aside-below li a {
   background: rgb(220, 247, 180);
 }
 
+/********************************************************/
+.hero-feature-games {
+  background: url(../images/gaming2-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "info none";
+}
+.hero-feature-games .feature-games-left {
+  grid-area: info;
+  padding: 15em 10em 15em 20em;
+  color: white;
+}
+.hero-feature-games .feature-games-left h2 {
+  font-size: 60px;
+  position: relative;
+  margin: 0;
+}
+.hero-feature-games .feature-games-left h2::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 7px;
+  bottom: -12px;
+  left: 0;
+  background: white;
+}
+.hero-feature-games .feature-games-left p {
+  color: white;
+  margin: 1.5em 0;
+}
+.hero-feature-games .feature-games-left a span {
+  color: black;
+  background: lightblue;
+  padding: 0.8em 1.5em;
+  border-radius: 0.5em;
+}
+.hero-feature-games .feature-games-left a span:hover {
+  background: rgb(193, 220, 229);
+}
+
+/********************************************************/
 .hero-intro {
   background: var(--bg);
   margin: 0;
@@ -373,10 +446,15 @@ aside .aside-main .aside-top li a, aside .aside-main .aside-below li a {
   cursor: pointer;
 }
 
+.aside-move {
+  transform: translateX(0);
+  opacity: 1;
+}
+
 @-webkit-keyframes scroll-down {
   from {
     opacity: 0;
-    transform: translateY(-200px);
+    transform: translateY(-80px);
   }
   to {
     opacity: 1;
@@ -387,7 +465,7 @@ aside .aside-main .aside-top li a, aside .aside-main .aside-below li a {
 @keyframes scroll-down {
   from {
     opacity: 0;
-    transform: translateY(-200px);
+    transform: translateY(-80px);
   }
   to {
     opacity: 1;
@@ -416,31 +494,31 @@ aside .aside-main .aside-top li a, aside .aside-main .aside-below li a {
     transition: 0.3s;
   }
   .hero-intro .left .card:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
   .hero-intro .mid .card {
     width: 150px;
     transition: 0.3s;
   }
   .hero-intro .mid .card:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
   .hero-intro .right .card {
     width: 150px;
     transition: 0.3s;
   }
   .hero-intro .right .card:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 
   .footer {
     padding: 1.2em;
   }
 }
-@media screen and (max-width: 940px) {
+@media only screen and (max-width: 940px) {
   .header {
     padding: 0.7em;
-    background: wheat;
+    background: var(--bg);
   }
   .header .header-content {
     display: unset;
@@ -450,16 +528,90 @@ aside .aside-main .aside-top li a, aside .aside-main .aside-below li a {
   .header .header-content .header-front {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
   .header .header-content .header-front .menu {
     display: block;
-    width: 40px;
-    cursor: pointer;
+    margin: 0.7em;
   }
   .header .header-content .header-mid {
     display: none;
   }
   .header .header-content .header-end {
     display: none;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .hero-intro {
+    display: flex;
+    flex-direction: column;
+    height: 25%;
+  }
+  .hero-intro .left {
+    padding: 2em;
+  }
+  .hero-intro .left .card {
+    width: 300px;
+    transition: 0.3s;
+  }
+  .hero-intro .left .card:hover {
+    transform: scale(1.1);
+  }
+  .hero-intro .mid {
+    padding: 2em;
+  }
+  .hero-intro .mid .card {
+    width: 300px;
+    transition: 0.3s;
+  }
+  .hero-intro .mid .card:hover {
+    transform: scale(1.1);
+  }
+  .hero-intro .right {
+    padding: 2em;
+  }
+  .hero-intro .right .card {
+    width: 300px;
+    transition: 0.3s;
+  }
+  .hero-intro .right .card:hover {
+    transform: scale(1.1);
+  }
+}
+@media only screen and (max-width: 700px) {
+  .hero .hero-content {
+    margin-left: 6em;
+  }
+  .hero .hero-content .opening h1 {
+    font-size: 50px;
+  }
+  .hero .hero-content .opening p {
+    font-size: 15px;
+    margin-left: 0.2em;
+  }
+  .hero .hero-content .inputgmail form {
+    margin-left: -6em;
+  }
+  .hero .hero-content .inputgmail label {
+    font-size: 15px;
+  }
+  .hero .hero-content .inputgmail input {
+    width: 350px;
+  }
+  .hero .hero-content .inputgmail button {
+    display: block;
+    margin-top: 0.6em;
+    margin-left: 0;
+  }
+
+  .footer ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.2em;
   }
 }/*# sourceMappingURL=personal-web.css.map */
