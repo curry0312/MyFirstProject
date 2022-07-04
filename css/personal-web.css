@@ -114,7 +114,7 @@ aside .aside-top li a p, aside .aside-below li a p {
   padding: 10px 6px 8px 10px;
 }
 .header .header-content .header-front label input {
-  width: 200px;
+  width: 150px;
   box-sizing: border-box;
   border: none;
   border-radius: 0 5em 5em 0;
@@ -321,19 +321,64 @@ aside .aside-top li a p, aside .aside-below li a p {
   box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-areas: "info none";
+  grid-template-areas: "none info";
 }
-.hero-feature-games .feature-games-left {
+.hero-feature-games .feature-games {
   grid-area: info;
   margin: 15em 5em;
   color: white;
+  text-align: right;
 }
-.hero-feature-games .feature-games-left h2 {
+.hero-feature-games .feature-games h2 {
   font-size: 60px;
   position: relative;
   margin: 0;
 }
-.hero-feature-games .feature-games-left h2::before {
+.hero-feature-games .feature-games h2::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 7px;
+  bottom: -12px;
+  right: 0;
+  background: white;
+}
+.hero-feature-games .feature-games p {
+  color: white;
+  margin: 1.5em 0;
+  text-align: justify;
+  text-justify: inter-word;
+}
+.hero-feature-games .feature-games a span {
+  color: black;
+  background: lightblue;
+  padding: 0.8em 1.5em;
+  border-radius: 0.5em;
+}
+.hero-feature-games .feature-games a span:hover {
+  background: rgb(193, 220, 229);
+}
+
+/********************************************************/
+.hero-feature-computer {
+  background: url(../images/computer-bg.jpg);
+  background-size: cover;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "info none";
+}
+.hero-feature-computer .feature-computer {
+  grid-area: info;
+  margin: 15em 5em;
+  color: white;
+}
+.hero-feature-computer .feature-computer h2 {
+  font-size: 60px;
+  position: relative;
+  margin: 0;
+}
+.hero-feature-computer .feature-computer h2::before {
   content: "";
   position: absolute;
   width: 100px;
@@ -342,17 +387,19 @@ aside .aside-top li a p, aside .aside-below li a p {
   left: 0;
   background: white;
 }
-.hero-feature-games .feature-games-left p {
+.hero-feature-computer .feature-computer p {
   color: white;
   margin: 1.5em 0;
+  text-align: justify;
+  text-justify: inter-word;
 }
-.hero-feature-games .feature-games-left a span {
+.hero-feature-computer .feature-computer a span {
   color: black;
   background: lightblue;
   padding: 0.8em 1.5em;
   border-radius: 0.5em;
 }
-.hero-feature-games .feature-games-left a span:hover {
+.hero-feature-computer .feature-computer a span:hover {
   background: rgb(193, 220, 229);
 }
 
@@ -531,18 +578,37 @@ aside .aside-top li a p, aside .aside-below li a p {
     display: flex;
     justify-content: center;
   }
-  .hero-feature-games .feature-games-left {
+  .hero-feature-games .feature-games {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .hero-feature-games .feature-games-left h2 {
+  .hero-feature-games .feature-games h2 {
     font-size: 45px;
   }
-  .hero-feature-games .feature-games-left p {
+  .hero-feature-games .feature-games p {
     font-size: 15px;
   }
-  .hero-feature-games .feature-games-left img {
+  .hero-feature-games .feature-games img {
+    width: 60px;
+  }
+
+  .hero-feature-computer {
+    display: flex;
+    justify-content: center;
+  }
+  .hero-feature-computer .feature-comouter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-feature-computer .feature-comouter h2 {
+    font-size: 45px;
+  }
+  .hero-feature-computer .feature-comouter p {
+    font-size: 15px;
+  }
+  .hero-feature-computer .feature-comouter img {
     width: 60px;
   }
 

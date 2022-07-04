@@ -122,7 +122,7 @@ aside {
                     padding: 10px 6px 8px 10px;
                 }
                 input {
-                    width: 200px;
+                    width: 150px;
                     box-sizing: border-box; 
                     border: none;
                     border-radius: 0 5em 5em 0;
@@ -340,12 +340,13 @@ aside {
         box-sizing: border-box;  
         display: grid;
         grid-template-columns: repeat(2,1fr);
-        grid-template-areas: "info none";
-        .feature-games-left {
+        grid-template-areas: "none info";
+        .feature-games{
             grid-area: info;
             margin: 15em 5em;
             color: white; 
-                
+            text-align: right;
+            
             h2 {
                 font-size: 60px;
                 position: relative;
@@ -356,13 +357,15 @@ aside {
                     width: 100px;
                     height: 7px;
                     bottom: -12px;
-                    left: 0;
+                    right: 0;
                     background: white;
                 }
             }
             p {
                 color: white;
                 margin: 1.5em 0;
+                text-align: justify;
+                text-justify:inter-word;
             }
             a {
                 span {
@@ -377,8 +380,52 @@ aside {
             }
         }
     }
-
-
+/********************************************************/
+.hero-feature-computer {
+    background: url(../images/computer-bg.jpg);
+    background-size:cover;
+    box-sizing: border-box;  
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas: "info none";
+    .feature-computer {
+        grid-area: info;
+        margin: 15em 5em;
+        color: white; 
+            
+        h2 {
+            font-size: 60px;
+            position: relative;
+            margin: 0;
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100px;
+                height: 7px;
+                bottom: -12px;
+                left: 0;
+                background: white;
+            }
+        }
+        p {
+            color: white;
+            margin: 1.5em 0;
+            text-align: justify;
+            text-justify:inter-word;
+        }
+        a {
+            span {
+                color: black;
+                background: lightblue;
+                padding: .8em 1.5em;
+                border-radius: .5em;
+                &:hover {
+                    background: rgb(193, 220, 229);
+                }
+            }
+        }
+    }
+}
 
 /********************************************************/
 
@@ -554,7 +601,7 @@ aside {
     .hero-feature-games {
         display:flex;
         justify-content: center;
-        .feature-games-left {
+        .feature-games {
             display: flex;
             flex-direction: column;            
             align-items: center;
@@ -569,6 +616,26 @@ aside {
             }
         }
     }
+
+    .hero-feature-computer {
+        display:flex;
+        justify-content: center;
+        .feature-comouter {
+            display: flex;
+            flex-direction: column;            
+            align-items: center;
+            h2 {
+                font-size: 45px;
+            }
+            p {
+                font-size: 15px;
+            }
+            img {
+                width: 60px;
+            }
+        }
+    }
+
 
     .footer {
         ul {
