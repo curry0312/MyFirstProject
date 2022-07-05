@@ -496,20 +496,6 @@ aside .aside-top li a p, aside .aside-below li a p {
   .header .header-content .header-end {
     display: none;
   }
-
-  .hero-feature-games {
-    display: flex;
-    justify-content: center;
-  }
-  .hero-feature-games .feature-games-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 650px;
-  }
-  .hero-feature-games .feature-games-left img {
-    width: 80px;
-  }
 }
 @media only screen and (max-width: 800px) {
   .hero-intro {
@@ -586,6 +572,9 @@ aside .aside-top li a p, aside .aside-below li a p {
   .hero-feature-games .feature-games h2 {
     font-size: 45px;
   }
+  .hero-feature-games .feature-games h2::before {
+    left: 85px;
+  }
   .hero-feature-games .feature-games p {
     font-size: 15px;
   }
@@ -597,18 +586,22 @@ aside .aside-top li a p, aside .aside-below li a p {
     display: flex;
     justify-content: center;
   }
-  .hero-feature-computer .feature-comouter {
+  .hero-feature-computer .feature-computer {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .hero-feature-computer .feature-comouter h2 {
-    font-size: 45px;
+  .hero-feature-computer .feature-computer h2 {
+    font-size: 50px;
+    text-align: center;
   }
-  .hero-feature-computer .feature-comouter p {
+  .hero-feature-computer .feature-computer h2::before {
+    left: 150px;
+  }
+  .hero-feature-computer .feature-computer p {
     font-size: 15px;
   }
-  .hero-feature-computer .feature-comouter img {
+  .hero-feature-computer .feature-computer img {
     width: 60px;
   }
 

@@ -512,20 +512,6 @@ aside {
             }
         }
     }
-
-    .hero-feature-games {
-        display:flex;
-        justify-content: center;
-        .feature-games-left {
-            display: flex;
-            flex-direction: column;            
-            align-items: center;
-            width: 650px;
-            img {
-                width: 80px;
-            }
-        }
-    }
 }
 
 @media only screen and (max-width:800px){
@@ -607,6 +593,9 @@ aside {
             align-items: center;
             h2 {
                 font-size: 45px;
+                &::before {
+                    left: 85px;
+                }
             }
             p {
                 font-size: 15px;
@@ -620,12 +609,16 @@ aside {
     .hero-feature-computer {
         display:flex;
         justify-content: center;
-        .feature-comouter {
+        .feature-computer {
             display: flex;
             flex-direction: column;            
             align-items: center;
             h2 {
-                font-size: 45px;
+                font-size: 50px;
+                text-align: center;
+                &::before {
+                    left: 150px;
+                }
             }
             p {
                 font-size: 15px;
